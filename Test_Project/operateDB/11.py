@@ -1,5 +1,5 @@
 from Redis import operateRedis
-#11212!2
+#11212!2111111111
 r = operateRedis.operateRedis()
 r.set("gjc61", "NJX6")
 r.get("CCC")
