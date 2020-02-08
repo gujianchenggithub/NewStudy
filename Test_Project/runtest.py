@@ -6,7 +6,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from operateDB import operateDb
-
+#1111
 
 def send_mail(latest_report):
     f=open(latest_report,'rb')
