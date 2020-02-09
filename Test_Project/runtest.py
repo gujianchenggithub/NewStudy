@@ -6,7 +6,8 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from operateDB import operateDb
-#1111
+from Redis import operateRedis
+
 
 def send_mail(latest_report):
     f=open(latest_report,'rb')
@@ -63,24 +64,40 @@ def latest_report(report_dir):
 
 
 if __name__ == '__main__':
+
+    #插入数据库所需要的数据
+    oPDb = operateDb.operateDb()
+    oPDb.insert("可以执行插入的数据insert into * from student;")
+
+    # 插入用例所需要的Redis数据
+    InsertRedis =operateRedis.operateRedis()
+    InsertRedis.set("gjc5","NJX5")
+
     report_dir='./test_report'
     test_dir='./test_case'
+
+
 
     discover = unittest.defaultTestLoader.discover(test_dir, pattern="test*.py")
     now=time.strftime("%Y-%m-%d~%H_%M_%S")
     report_name=report_dir+'/'+now+'result.html'
 
-    DD = operateDb.operateDb()
-    DD.delete("selectA * from student;")
+
 
     with open(report_name,'wb') as f:
         runner=BSTestRunner(stream=f,title='test report',description='test result')
         runner.run(discover)
     f.close()
 
+    # 清理插入的数据库数据
+    oPDb.delete("可以执行插入的数据delete from student;")
+
+    # 清理所需要的Redis数据
+    InsertRedis.remove("gjc5")
+
     latest_report=latest_report(report_dir)
     send_mail(latest_report)
-    print("0000000000000000")
+    print("这是一个完整的测试步骤！！！")
 
 
 
