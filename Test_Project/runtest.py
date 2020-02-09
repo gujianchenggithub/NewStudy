@@ -80,3 +80,4 @@ if __name__ == '__main__':
 
     latest_report=latest_report(report_dir)
     send_mail(latest_report)
+    print("gujiancheng001")
