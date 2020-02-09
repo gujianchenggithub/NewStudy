@@ -82,5 +82,7 @@ if __name__ == '__main__':
     send_mail(latest_report)
     print("gujiancheng001")
     print("gujiancheng002")
+    print("gujiancheng003")
+
 
 
