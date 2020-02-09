@@ -17,7 +17,7 @@ def send_mail(latest_report):
     smtpserver = 'smtp.163.com'
 
     user = 'gujiancheng1989@163.com'
-    password = 'gu15925686072'
+    password = 'gu15925686073'
 
     sender = 'gujiancheng1989@163.com'
     receives = ['1046662346@qq.com', '2819992623@qq.com']
