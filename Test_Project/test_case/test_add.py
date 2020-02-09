@@ -11,8 +11,6 @@ class Test_add(Setup_tearDown):
         j=Math(5,5)
         self.assertEqual(j.add(),110)
 
-    DD = operateDb.operateDb()
-    DD.delete("selectA * from student;")
 
     def test_add1(self):
         j=Math(5,8)
