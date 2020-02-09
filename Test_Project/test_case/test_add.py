@@ -5,7 +5,7 @@ from operateDB import operateDb
 
 class Test_add(Setup_tearDown):
 
-    @unittest.skip("我手动设置失败的。。。。。")
+    @unittest.skip("我手动设置失败的de 。。。。。")
 
     def test_add(self):
         j=Math(5,5)
