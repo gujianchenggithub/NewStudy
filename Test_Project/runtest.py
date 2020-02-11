@@ -89,7 +89,7 @@ if __name__ == '__main__':
         runner.run(discover)
     f.close()
 
-    # 清理插入的数据库数据
+    # 清理插入的数据库数据！！！
     oPDb.delete("可以执行插入的数据delete from student;")
 
     # 清理所需要的Redis数据
